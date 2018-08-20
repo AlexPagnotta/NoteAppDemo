@@ -1,3 +1,3 @@
-# NoteApp
+# NoteApp Demo
 
-Work in progress
+Demo of the NoteApp, just the front end in angular.

@@ -1,0 +1,43 @@
+<div class="main-container">
+  <div class="navbar-logo">
+    <p class="logo-text">
+      <span>
+        Note
+      </span>
+      <span class="logo-text-second-word">
+        App
+      </span>
+    </p>
+  </div>
+  <div class="navbar-items">
+    <div *ngIf="!isMobile || isSearchVisible" class="search-bar-container">
+      <div class="search-bar">
+        <input class="search-bar-input" [(ngModel)]="searchString" (keyup)="search()" type="text" placeholder="Search...">
+        <button mdcIconButton iconOn="close" iconOff="close" class="icon-mobile search-icon-mobile" (click)="hideSearchBar()">
+        </button>
+      </div>
+    </div>
+    <div class="icon-container-mobile">
+      <button mdcIconButton iconOn="search" iconOff="search" class="icon-mobile" (click)="showSearchBar()">
+      </button>
+    </div>
+    <div class="user-info-container">
+      <div class="user-info">
+        <div class="user-info-visible">
+          <p class="user-name">User Demo</p>
+          <div class="user-image"></div>
+        </div>
+        <button mdc-button [unelevated]="true" class="user-logout-button" (click)="logOut()">
+          Log Out
+        </button>
+      </div>
+    </div>
+    <mdc-menu-anchor #anchor class="icon-container-mobile">
+      <button mdcIconButton iconOn="more_vert" iconOff="more_vert" (click)="menu.open()" class="icon-mobile">
+      </button>
+      <mdc-menu #menu (select)="handleMenuSelect($event)" [anchor]="anchor">
+        <mdc-menu-item id="0">Logout</mdc-menu-item>
+      </mdc-menu>
+    </mdc-menu-anchor>
+  </div>
+</div>

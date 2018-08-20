@@ -1,0 +1,33 @@
+
+//Color variables
+
+$mdc-theme-primary: rgb(255,196,0); // primary color
+$mdc-theme-secondary: rgb(68,68,68); // secondary color
+$text-light-color: rgb(191,191,191);
+$text-dark-color: rgb(119,119,119);
+$back-color: #F9F9F9;
+
+//Mixins
+
+@mixin box-shadow($top, $left, $blur, $spread, $color) {
+    -webkit-box-shadow: $top $left $blur $spread $color;
+    -moz-box-shadow: $top $left $blur $spread $color;
+    box-shadow: $top $left $blur $spread $color;
+}
+
+//Global styles
+
+$mdc-layout-grid-default-margin: (
+  desktop: 0px,
+  tablet: 0px,
+  phone: 0px
+) !default;
+
+$mdc-layout-grid-default-gutter: (
+  desktop: 0px,
+  tablet: 0px,
+  phone: 0px
+) !default;
+
+@import "~@angular-mdc/theme/material";
+

@@ -1,0 +1,66 @@
+@import '../../styles.scss';
+.dialog {
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 400px;
+  padding-top: 10px;
+}
+
+.text-input.title {
+  font-size: 25px;
+  color: $mdc-theme-secondary;
+}
+
+.text-input {
+  color: $text-dark-color;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+  resize: none;
+  font-family: 'Product Sans';
+  outline: none;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $text-light-color;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $text-light-color;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $text-light-color;
+}
+
+.footer-dialog {
+  background-color: $back-color;
+  height: 70px;
+  padding-right: 50px;
+}
+
+.btn-delete {
+  color: $text-dark-color !important;
+  position: absolute;
+  left: 30px;
+}
+
+.btn-cancel {
+  color: $text-dark-color !important;
+}
+
+.mdc-button {
+  font-weight: 500;
+  color: $mdc-theme-secondary;
+  font-size: 16px;
+  font-family: 'Product Sans';
+}

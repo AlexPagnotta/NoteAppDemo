@@ -1,0 +1,33 @@
+@import '../../styles.scss';
+
+.card{
+    min-height:150px;
+    max-height:600px;    
+    position:relative;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    @include box-shadow(0px, 3px, 8px, 0px, rgba(194, 194, 194, 0.2));
+    padding: 30px;
+}
+
+.card:hover{
+    @include box-shadow(0px, 3px, 30px, 0px, rgba(194, 194, 194, 0.2));
+}
+
+
+.title{
+    font-weight: medium;
+    color: $mdc-theme-secondary;
+    font-size: 25px;
+}
+
+.text{
+    color: $text-dark-color;
+    font-size: 15px;
+    overflow: hidden;
+    line-height: 24px;
+    max-height: 10 * 24px;
+    text-overflow: ellipsis;
+    font-family: Roboto;
+}

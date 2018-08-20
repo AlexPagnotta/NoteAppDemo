@@ -1,0 +1,73 @@
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell
+    mdc-layout-grid__cell--span-3-desktop
+    mdc-layout-grid__cell--span-2-tablet
+     mdc-layout-grid__cell--span-0-mobile">
+    </div>
+    <div class="mdc-layout-grid__cell
+    mdc-layout-grid__cell--span-6-desktop
+    mdc-layout-grid__cell--span-10-tablet
+     mdc-layout-grid__cell--span-12-mobile">
+      <div class="card">
+        <div class="banner">
+        </div>
+        <div class="titles-container">
+          <p class="title">
+            <span>
+              Note
+            </span>
+            <span class="second-word">
+              App
+            </span>
+          </p>
+          <p class="title sub-title">
+            Login
+          </p>
+        </div>
+        <form name="loginForm" #f="ngForm" (ngSubmit)="logIn(f)">
+          <div class="text-inputs-container">
+            <div class="text-input-container">
+              <input required email type="email" placeholder="Email" ngModel #email="ngModel" name="email" id="email" class="text-input"
+                (click)="hasLoginError = false">
+              <div *ngIf="email.touched && email.invalid" class="form-errors">
+                <div *ngIf="email.hasError('required')">
+                  The Email field is required.
+                </div>
+                <div *ngIf="email.hasError('email') && !email.hasError('required') ">
+                  This is not a valid email.
+                </div>
+              </div>
+            </div>
+            <div class="text-input-container">
+              <input required minlength="6" type="password" ngModel #password="ngModel" name="password" placeholder="Password" id="password"
+                class="text-input" (click)="hasLoginError = false">
+              <div *ngIf="password.touched && password.invalid" class="form-errors">
+                <div *ngIf="password.hasError('required')">
+                  The Password is required.
+                </div>
+                <div *ngIf="password.hasError('minlength')">
+                  The Password must be at least 6 characters.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="hasLoginError" class="login-error">{{loginErrorText}}</div>
+          <div class="buttons-container">
+            <button mdc-button [unelevated]="true" class="secondary-button" (click)="signUp()">
+              Sign Up
+            </button>
+            <button mdc-button [unelevated]="true" class="main-button" [disabled]="!f.valid">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mdc-layout-grid__cell
+    mdc-layout-grid__cell--span-3-desktop
+     mdc-layout-grid__cell--span-2-tablet
+     mdc-layout-grid__cell--span-0-mobile
+     "></div>
+  </div>
+</div>

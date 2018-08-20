@@ -1,0 +1,19 @@
+<div class="container-main">
+
+  <app-navbar (onNotesSearch)="onNotesSearch($event)" class="navbar"></app-navbar>
+  <div class="add-bar">
+    <button mdc-fab [extended]="true" label="Add a new note" (click)="createNote()" class="add-note-btn">
+      <mdc-icon>add</mdc-icon>
+    </button>
+  </div>
+  <button class="mdc-fab add-note-btn-mobile" aria-label="add" (click)="createNote()">
+    <span class="mdc-fab__icon material-icons">add</span>
+  </button>
+  <mdc-image-list [masonry]="true" class="masonry-image-list">
+    <mdc-image-list-item *ngFor="let note of notesToShow">
+      <div app-note [note-data]="note" (onDeleteNote)="onDeleteNote($event)" (onUpdateNote)="onUpdateNote($event)">
+      </div>
+    </mdc-image-list-item>
+  </mdc-image-list>
+</div>
+s

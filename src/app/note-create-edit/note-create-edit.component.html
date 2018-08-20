@@ -1,0 +1,20 @@
+<mdc-dialog>
+  <mdc-dialog-surface class="dialog">
+    <mdc-dialog-body>
+      <form name="noteForm" #f="ngForm">
+        <div class="form-group">
+          <input [(ngModel)]="note.title" placeholder="Title" class="text-input title" name="name" id="name">
+        </div>
+        <div class="form-group">
+          <textarea autosize [minRows]="1" [maxRows]="15" [(ngModel)]="note.text" placeholder="Text" class="text-input" name="text"
+            id="text"></textarea>
+        </div>
+      </form>
+    </mdc-dialog-body>
+    <mdc-dialog-footer class="footer-dialog">
+      <button class="btn-delete" [hidden]="isANewNote" mdcIconButton iconOn="delete" iconOff="delete" (click)="deleteNote()"></button>
+      <button mdc-dialog-button class="btn-cancel" [cancel]="true">Decline</button>
+      <button [disabled]="!f.valid" mdc-dialog-button [accept]="true" (click)="saveNote()">Accept</button>
+    </mdc-dialog-footer>
+  </mdc-dialog-surface>
+</mdc-dialog>

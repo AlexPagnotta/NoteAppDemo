@@ -5,15 +5,10 @@ import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
 import { RoutingModuleModule } from './routing-module/routing-module.module';
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { AuthRequestOptions } from './auth-classes/auth.request';
 import {RequestOptions} from '@angular/http';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { AuthService} from './services/auth.service';
-import { AuthErrorHandler } from './auth-classes/auth-error-handler';
 import { ErrorHandler} from '@angular/core';
-import { SignupComponent } from './signup/signup.component';
 import { NoteService} from './services/notes.service';
 import {FormsModule} from '@angular/forms';
 import { NoteComponent } from './note/note.component';
@@ -29,8 +24,6 @@ import {AutosizeModule} from 'ngx-autosize';
   declarations: [
     AppComponent,
     NotesComponent,
-    LoginComponent,
-    SignupComponent,
     NoteComponent,
     NavbarComponent,
     NoteCreateEditComponent
@@ -57,15 +50,6 @@ import {AutosizeModule} from 'ngx-autosize';
     NoteCreateEditComponent
   ],
   providers: [
-    {
-      provide: RequestOptions,
-      useClass: AuthRequestOptions
-    },
-    {
-      provide: ErrorHandler,
-      useClass: AuthErrorHandler
-    },
-    AuthService,
     NoteService,
   ],
   bootstrap: [AppComponent]

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
-import { AuthService } from './auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Note } from '../classes/note';
 
@@ -11,7 +10,7 @@ export class NoteService {
 
     notes: Note[];
 
-    constructor(private http: Http, private auth: AuthService) {
+    constructor(private http: Http) {
         this.notes = [
             {
                 id: 0,

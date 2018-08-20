@@ -12,8 +12,8 @@ import { EventEmitter } from '@angular/core';
 })
 export class NoteCreateEditComponent implements OnInit {
 
-  private note: Note;
-  private isANewNote: boolean;
+  note: Note;
+  isANewNote: boolean;
 
   constructor(private noteService: NoteService,
     private route: ActivatedRoute,

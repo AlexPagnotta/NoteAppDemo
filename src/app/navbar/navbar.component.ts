@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener, Output } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { User } from '../classes/user';
 import { Router } from '@angular/router';
 import { ViewChild } from '@angular/core';
@@ -16,12 +15,11 @@ export class NavbarComponent implements OnInit {
 
   private user: User;
   private selectedIndex = -1;
-  private isSearchVisible = false;
-  private isMobile: boolean;
+  isSearchVisible = false;
+  isMobile: boolean;
   private searchString = '';
 
-  constructor(private auth: AuthService, private router: Router) {
-    this.user = auth.getUserData();
+  constructor( private router: Router) {
     this.isMobile = window.innerWidth < 840;
   }
 
@@ -56,8 +54,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut() {
-    this.auth.logout();
-    this.router.navigate(['login']);
   }
 
   search() {

@@ -50,7 +50,6 @@ export class NotesComponent implements OnInit {
   }
 
   public onDeleteNote(note) {
-    console.log('CIAOOO');
     this.service.deleteNote(note);
     this.reloadUi();
   }
